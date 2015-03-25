@@ -1,0 +1,34 @@
+
+Shader Colormapping
+===================
+
+CubicYFcolormapShader_*.unitypackage contains a prefab of a Quadwith a
+customized shader capable of reading single channel float32 geotiff datasets
+and applying a colormap with monotonically increasing luminance. 
+
+Using the Shader
+---------------------
+Internally the shader normalizes the float data to between 0 and 1 based on the
+Min Value and Max Value fields specified in the inspector. The example depicts
+Normalized Difference Vegetation Index maps with a range of -1 to 1 so these
+values are specified as the Min and Max values respectively.
+
+Shader and Material Details
+---------------------------
+
+To avoid tiling and other problems the slide image resources needs to:
+   1. Be imported as "Advanced"
+   2. Have wrap mode set to clamp
+   3. Have generate mipmaps disabled
+   
+Procedurally Slide Changes
+--------------------------
+
+Slides can be procedurally changed by setting the "_MainTex" texture of the 
+projector's material.
+ 
+Acknowledgements
+----------------
+The colormap is the Cubic YF map developed by Matteo Niccoli.
+http://www.mathworks.com/matlabcentral/fileexchange/28982-perceptually-improved-colormaps
+ 
